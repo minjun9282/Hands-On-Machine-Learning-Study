@@ -1,3 +1,7 @@
+"""
+책의 2.3.2절 내용입니다.
+데이터를 다운받고 Pandas를 활용하여 csv파일을 데이터프레임으로 읽어들이는 과정입니다.
+"""
 import os
 import tarfile
 import urllib.request # 책에서는 import urllib으로 하지만 urllib.request를 import해줘야 Attribute Error가 발생하지 않음.
