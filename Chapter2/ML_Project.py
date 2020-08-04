@@ -9,7 +9,8 @@ HOUSING_PATH = os.path.join("datasets", "housing") # 경로를 병합하여 새 
 HOUSING_URL = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
 
 def fetch_housing_data(housing_url = HOUSING_URL, housing_path = HOUSING_PATH): # url을 입력받아 데이터를 path에 다운받는 함수 (데이터를 내려받는 일을 자동화하기 위한 함수)
-    os.makedirs(housing_path, exist_ok = True) #housing path에 맞춰 폴더를 생성함. exist_ok=True를 쓴 것은 폴더가 존재하지 않으면 생성하고, 존재하는 경우에는 아무것도 하지 않기 위함.(에러 방지)
+    os.makedirs(housing_path, exist_ok = True) # os.makedirs(경로): housing path에 맞춰 폴더를 생성함. exist_ok=True를 쓴 것은 폴더가 존재하지 않으면 생성하고, 존재하는 경우에는 아무것도 하지 않기 위함.(에러 방지)
+                                               # 참고: https://medium.com/@jyson88/python3-os-module-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95-3e6d71b1cec8
     tgz_path = os.path.join(housing_path, "housing.tgz") 
     urllib.request.urlretrieve(housing_url, tgz_path) #urllib.request.urlretrieve를 통해 housing_url의 파일을 tgz_path로 저장할 수 있음.
     housing_tgz = tarfile.open(tgz_path)
